@@ -2,7 +2,7 @@ var input = document.getElementById('textInput');
 var input$ = Rx.Observable
     .fromEvent(input, 'keyup')
     .map((input) => input.currentTarget.value)
-    .debounceTime(1000)
+    .debounceTime(5000)
     .flatMap((searchTerm) => {
         var response = Rx.Observable
             .ajax({ url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyDeGa1PuDXjgYgcTYNlOMfpwa6q_OgHcwg&cx=017576662512468239146:omuauf_lfve&q=' + searchTerm, 
